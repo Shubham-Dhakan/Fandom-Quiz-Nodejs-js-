@@ -2,11 +2,12 @@
 var readlineSync = require("readline-sync");
 var question = readlineSync.question("What is your favorite  sports? ");
 console.log("Amazing, " + question + "is a royal and luxrious sports");
+count = 0;
 
 function play(ques, answ) {
   var userInfo = readlineSync.question(ques);
   console.log(userInfo);
-  count = 0;
+
   if (userInfo == answ) {
     console.log("Data given is valid");
     count = count + 1;
@@ -42,5 +43,11 @@ for (var i = 0; i <= quizzBank.length; i++) {
   var userData = quizzBank[i];
   play(userData.que, userData.ans);
   console.log("Current count is: " + count);
-  console.log("----------------");
+  console.log("-------------------");
+  if (count == 5) {
+    console.log("You reached to level two " + count + "is your current score: ");
+  }
+  else if (count == 10) {
+    console.log("You reached to level three " + count + "is your current score: ")
+  }
 }
